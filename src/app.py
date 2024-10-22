@@ -14,7 +14,7 @@ app.config["UPLOAD_FOLDER"]       = os.getenv("VOLUME_MOUNT_PATH", "/tmp")
 app.config["VOLUME_URI"]          = os.getenv("VOLUME_URI", "/Volumes/ggw/apps/upload-app")
 app.config["MAX_CONTENT_LENGTH"]  = 16 * 1024 * 1024
 app.config["WORKSPACE_PROFILE"]   = os.getenv("WORKSPACE_PROFILE", "DEFAULT")
-app.config["DATABRICKS_APP_PORT"] = os.getenv("DATABRICKS_APP_PORT", "8666")
+app.config["DATABRICKS_APP_PORT"] = os.getenv("DATABRICKS_APP_PORT", "8000")
 
 print("working on folder " + app.config["UPLOAD_FOLDER"])
 print("using workspace profile: " + app.config["WORKSPACE_PROFILE"])

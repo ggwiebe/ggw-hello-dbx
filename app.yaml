@@ -4,5 +4,3 @@ env:
     value: "AWS_E2_FIELD_ENG_WEST"
   - name: "VOLUME_URI"
     value: "/Volumes/ggw/apps/upload-app"
-  - name: "DATABRICKS_APP_PORT"
-    value: "8777"

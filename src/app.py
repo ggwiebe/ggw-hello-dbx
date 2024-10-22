@@ -10,10 +10,11 @@ app.wsgi_app = ProxyFix(
     app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
 )
 
-app.config["UPLOAD_FOLDER"] = os.getenv("VOLUME_MOUNT_PATH", "/tmp")
-app.config["VOLUME_URI"] = os.getenv("VOLUME_URI", "/Volumes/ggw/apps/upload-app")
-app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
-app.config["WORKSPACE_PROFILE"] = os.getenv("WORKSPACE_PROFILE", "DEFAULT")
+app.config["UPLOAD_FOLDER"]       = os.getenv("VOLUME_MOUNT_PATH", "/tmp")
+app.config["VOLUME_URI"]          = os.getenv("VOLUME_URI", "/Volumes/ggw/apps/upload-app")
+app.config["MAX_CONTENT_LENGTH"]  = 16 * 1024 * 1024
+app.config["WORKSPACE_PROFILE"]   = os.getenv("WORKSPACE_PROFILE", "DEFAULT")
+app.config["DATABRICKS_APP_PORT"] = os.getenv("DATABRICKS_APP_PORT", "8666")
 
 print("working on folder " + app.config["UPLOAD_FOLDER"])
 print("using workspace profile: " + app.config["WORKSPACE_PROFILE"])
@@ -71,5 +72,5 @@ def download_file(filename):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('DATABRICKS_APP_PORT', 8000))
+    port = int(os.environ.get('DATABRICKS_APP_PORT', app.config["DATABRICKS_APP_PORT"]))
     app.run(debug=True, host='0.0.0.0', port=port)

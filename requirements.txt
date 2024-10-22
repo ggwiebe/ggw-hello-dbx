@@ -1,0 +1,4 @@
+flask
+werkzeug
+databricks-sdk
+gunicorn

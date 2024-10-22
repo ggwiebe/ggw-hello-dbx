@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upload File</h2>
+<form action = "/upload" method = "POST" 
+   enctype = "multipart/form-data">
+   <input type = "file" name = "file" />
+   <input type = "submit"/>
+</form>
+
+<div>
+   <table>
+       <tr>
+           <th>file</th>
+       </tr>
+       {% for file in filenames %}
+       <tr>
+           <td> {{file}}</a></td>
+       </tr>
+       {% endfor %}
+   </table>
+   <hr />
+
+</div>
+</body>
+</html>

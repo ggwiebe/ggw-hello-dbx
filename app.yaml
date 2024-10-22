@@ -1,0 +1,8 @@
+command:  ["gunicorn", "-w", "4", "-b", "0.0.0.0", "src.app:app"]
+env:
+  - name: "WORKSPACE_PROFILE"
+    value: "AWS_E2_FIELD_ENG_WEST"
+
+  - name: "VOLUME_URI"
+    value: "/Volumes/ggw/apps/upload-app"
+

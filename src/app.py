@@ -19,13 +19,7 @@ app.config["DATABRICKS_APP_PORT"] = os.getenv("DATABRICKS_APP_PORT", "8000")
 print("working on folder " + app.config["UPLOAD_FOLDER"])
 print("using workspace profile: " + app.config["WORKSPACE_PROFILE"])
 
-# ws_profile = app.config["WORKSPACE_PROFILE"] # AWS_E2_FIELD_ENG_WEST
-# if (ws_profile == null):
-#     print(f"WORKSPACE_PROFILE app.config value not found; using DEFAULT")
-#     ws_profile = "DEFAULT"
-# print(f"creating workspace client using profile: {ws_profile}...")
 w = WorkspaceClient(profile=app.config["WORKSPACE_PROFILE"])
-
 
 @app.errorhandler(413)
 def too_large(e):
